@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace Renumbrance
@@ -31,8 +28,6 @@ namespace Renumbrance
             Debug.Log(number1.ToString());
 
             number1++;
-
-            
 
             //number1--;
 
