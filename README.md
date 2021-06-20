@@ -50,7 +50,7 @@ Debug.Log(health);                      //Base: 20  current: 66
 * Implicit / Explicit Type Conversion to float, int, byte. So you can now throw RemNumbers in common number methods-parameters
 * Field initialization possible
 * Base and current value now visible in unity Inspector. current value non-editable
-### changes
+#### changes
 * operators now modify the base value of RemNumbers
 * RemNumber now called Member
 #### Bugs fixed
