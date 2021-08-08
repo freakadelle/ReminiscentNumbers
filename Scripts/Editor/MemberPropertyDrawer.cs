@@ -4,12 +4,12 @@ using MyEditorTools;
 
 namespace Renumbrance.Editor
 {
-    [CustomPropertyDrawer(typeof(Member))]
+    [CustomPropertyDrawer(typeof(ModNumber))]
     public class MemberPropertyDrawer : PropertyDrawer
     {
         SerializedProperty value, baseValue;
 
-        Member propertyObject;
+        ModNumber propertyObject;
 
         /// <summary>
         /// Unity method for drawing GUI in Editor
