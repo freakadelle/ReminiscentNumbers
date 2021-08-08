@@ -3,7 +3,7 @@ Smart numbers for C# which can be modified in traditional ways (+, -, *, /), but
 <br>
 
 ## The Idea
-Idea is, that a number is initialized with its base value, whereas every operation on this number can be executed on its base value and in a given order (prioritizing operators/calculation methods) while providing an easy and readable coding style. Useful when multiple instances modify an attribute like health of a character. Increasing this attribute (initial value = 100) by 10% 3 times in a row would result in 133.1f (It should be 130 because its 3 times 100*0.1). This happens, because the health-attribute-number don't know where it originates from (It has no memory) and the modifying instances should'nt need to know what the base value of this attribute is...This is not their job. You could track the base value of eacht attribute separately in each class and recalculate them in a static way or providing each class with a "IncreaseHealth"-Method-Wrapper, but this is not the intended way IMHO. Dealing with 1 attribute instead of 2 seems better + you gain better control over the whole calculation-system and the modification-history.
+Idea is, that a number is initialized with its base value, whereas mathematical operations on this number can be executed on its base value and in a given order (prioritizing operators) while providing an easy and readable coding style. Useful when multiple instances modify an attribute like health of a character. Increasing this attribute (initial value = 100) by 10% 3 times in a row would result in 133.1f (It should be 130, because its 3 times 100*0.1). This happens, because the health-attribute-number don't know where it originates from (It has no memory) and the modifying instances should'nt need to know what the base value of this attribute is...This is not their job. Now you could track the base value of each attribute separately in each class and recalculate them in a static way or providing each class with a "IncreaseHealth"-Method-Wrapper, but this is not a really elegant way IMHO and can not be applied universally. With Members (Memory Numbers) you only have to deal with 1 attribute which is handled like a numbre and you gain better control over the whole recalculation-system and the modification-history.
 For example: 
 
 ```csharp
@@ -30,7 +30,10 @@ Debug.Log(health);                      //Base: 20  current: 66
 
 ## Design Goals
 * Should be accessible and easy to use like other primitive number types
-* No need to initialize or call constructor
+* No need to initialize or call constructors
+* Generic usage
+* No need for conversions
+* Primitive number type copmatible
 
 ## Problems
 * classes needs initialization/constructor call. Try to replace constructor call by implicit operator for more intuitive usage
